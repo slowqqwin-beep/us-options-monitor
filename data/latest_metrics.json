@@ -1,17 +1,17 @@
 {
   "schema_version": "2.0",
   "date": "2026-11-23",
-  "as_of": "2026-11-23 05:49 EST",
-  "updated_at_utc": "2026-11-23T10:49:44Z",
-  "stress_score": 77,
+  "as_of": "2026-11-23 06:57 EST",
+  "updated_at_utc": "2026-11-23T11:57:05Z",
+  "stress_score": 76,
   "metrics": {
-    "vixeq_vix": 1.92,
+    "vixeq_vix": 1.93,
     "dspx": 42.3,
     "nvda": 125.5,
-    "vix": 30.2,
+    "vix": 30.0,
     "vvix": 138.0,
-    "vix_vxv": 0.98,
-    "vix9d_vix": 1.35,
+    "vix_vxv": 0.97,
+    "vix9d_vix": 1.36,
     "skew": 138.8,
     "eq_pc": 0.77,
     "total_pc": 1.13,
@@ -20,13 +20,231 @@
     "dealer_gamma": -9.6,
     "net_delta": -150.0
   },
-  "prev_metrics": null,
+  "prev_metrics": {
+    "vixeq_vix": 1.61,
+    "dspx": 42.3,
+    "nvda": 125.5,
+    "vix": 35.9,
+    "vvix": 138.0,
+    "vix_vxv": 1.16,
+    "vix9d_vix": 1.13,
+    "skew": 138.8,
+    "eq_pc": 0.84,
+    "total_pc": 1.24,
+    "index_pc": 1.38,
+    "gex": -130.0,
+    "dealer_gamma": -9.6,
+    "net_delta": -150.0
+  },
   "history_30d": [
     {
-      "date": "2026-11-23",
-      "stress_score": 77,
-      "vix": 30.2,
+      "date": "2026-10-13",
+      "stress_score": 12,
+      "vix": 15.3,
+      "vix_vxv": 0.85,
+      "gex": 80.4
+    },
+    {
+      "date": "2026-10-14",
+      "stress_score": 18,
+      "vix": 16.9,
+      "vix_vxv": 0.9,
+      "gex": 47.8
+    },
+    {
+      "date": "2026-10-15",
+      "stress_score": 17,
+      "vix": 16.5,
+      "vix_vxv": 0.89,
+      "gex": 60.2
+    },
+    {
+      "date": "2026-10-16",
+      "stress_score": 36,
+      "vix": 20.0,
       "vix_vxv": 0.98,
+      "gex": 7.2
+    },
+    {
+      "date": "2026-10-19",
+      "stress_score": 26,
+      "vix": 18.4,
+      "vix_vxv": 0.94,
+      "gex": 46.3
+    },
+    {
+      "date": "2026-10-20",
+      "stress_score": 21,
+      "vix": 17.3,
+      "vix_vxv": 0.91,
+      "gex": 44.2
+    },
+    {
+      "date": "2026-10-21",
+      "stress_score": 18,
+      "vix": 16.7,
+      "vix_vxv": 0.89,
+      "gex": 60.3
+    },
+    {
+      "date": "2026-10-22",
+      "stress_score": 27,
+      "vix": 19.0,
+      "vix_vxv": 0.94,
+      "gex": 130.0
+    },
+    {
+      "date": "2026-10-23",
+      "stress_score": 27,
+      "vix": 19.5,
+      "vix_vxv": 0.95,
+      "gex": 40.0
+    },
+    {
+      "date": "2026-10-26",
+      "stress_score": 24,
+      "vix": 18.4,
+      "vix_vxv": 0.92,
+      "gex": 43.0
+    },
+    {
+      "date": "2026-10-27",
+      "stress_score": 21,
+      "vix": 17.5,
+      "vix_vxv": 0.89,
+      "gex": 55.2
+    },
+    {
+      "date": "2026-10-28",
+      "stress_score": 18,
+      "vix": 16.9,
+      "vix_vxv": 0.88,
+      "gex": 56.1
+    },
+    {
+      "date": "2026-10-29",
+      "stress_score": 19,
+      "vix": 17.2,
+      "vix_vxv": 0.89,
+      "gex": 56.2
+    },
+    {
+      "date": "2026-10-30",
+      "stress_score": 27,
+      "vix": 19.4,
+      "vix_vxv": 0.93,
+      "gex": 80.4
+    },
+    {
+      "date": "2026-11-02",
+      "stress_score": 34,
+      "vix": 21.1,
+      "vix_vxv": 0.98,
+      "gex": 130.0
+    },
+    {
+      "date": "2026-11-03",
+      "stress_score": 32,
+      "vix": 20.8,
+      "vix_vxv": 0.98,
+      "gex": 130.0
+    },
+    {
+      "date": "2026-11-04",
+      "stress_score": 17,
+      "vix": 16.6,
+      "vix_vxv": 0.88,
+      "gex": 54.6
+    },
+    {
+      "date": "2026-11-05",
+      "stress_score": 50,
+      "vix": 28.2,
+      "vix_vxv": 1.1,
+      "gex": 130.0
+    },
+    {
+      "date": "2026-11-06",
+      "stress_score": 40,
+      "vix": 25.6,
+      "vix_vxv": 1.04,
+      "gex": 36.0
+    },
+    {
+      "date": "2026-11-09",
+      "stress_score": 27,
+      "vix": 19.9,
+      "vix_vxv": 0.95,
+      "gex": 49.6
+    },
+    {
+      "date": "2026-11-10",
+      "stress_score": 25,
+      "vix": 19.5,
+      "vix_vxv": 0.94,
+      "gex": 45.5
+    },
+    {
+      "date": "2026-11-11",
+      "stress_score": 19,
+      "vix": 17.5,
+      "vix_vxv": 0.91,
+      "gex": 102.7
+    },
+    {
+      "date": "2026-11-12",
+      "stress_score": 23,
+      "vix": 18.7,
+      "vix_vxv": 0.93,
+      "gex": 57.6
+    },
+    {
+      "date": "2026-11-13",
+      "stress_score": 24,
+      "vix": 19.3,
+      "vix_vxv": 0.94,
+      "gex": 61.3
+    },
+    {
+      "date": "2026-11-16",
+      "stress_score": 34,
+      "vix": 22.9,
+      "vix_vxv": 0.99,
+      "gex": 130.0
+    },
+    {
+      "date": "2026-11-17",
+      "stress_score": 41,
+      "vix": 25.5,
+      "vix_vxv": 1.02,
+      "gex": 87.5
+    },
+    {
+      "date": "2026-11-18",
+      "stress_score": 39,
+      "vix": 24.6,
+      "vix_vxv": 1.01,
+      "gex": 83.0
+    },
+    {
+      "date": "2026-11-19",
+      "stress_score": 70,
+      "vix": 28.4,
+      "vix_vxv": 1.05,
+      "gex": -64.6
+    },
+    {
+      "date": "2026-11-20",
+      "stress_score": 96,
+      "vix": 35.9,
+      "vix_vxv": 1.16,
+      "gex": -130.0
+    },
+    {
+      "date": "2026-11-23",
+      "stress_score": 76,
+      "vix": 30.0,
+      "vix_vxv": 0.97,
       "gex": -130.0
     }
   ],
