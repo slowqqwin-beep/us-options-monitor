@@ -1,31 +1,31 @@
 {
   "schema_version": "2.0",
   "date": "2026-11-23",
-  "as_of": "2026-11-23 05:15 EST",
-  "updated_at_utc": "2026-11-23T10:15:06Z",
-  "stress_score": 63,
+  "as_of": "2026-11-23 05:49 EST",
+  "updated_at_utc": "2026-11-23T10:49:44Z",
+  "stress_score": 77,
   "metrics": {
-    "vixeq_vix": 1.9,
+    "vixeq_vix": 1.92,
     "dspx": 42.3,
     "nvda": 125.5,
-    "vix": 30.4,
+    "vix": 30.2,
     "vvix": 138.0,
     "vix_vxv": 0.98,
-    "vix9d_vix": 1.34,
+    "vix9d_vix": 1.35,
     "skew": 138.8,
     "eq_pc": 0.77,
     "total_pc": 1.13,
     "index_pc": 1.27,
     "gex": -130.0,
-    "dealer_gamma": 10.0,
-    "net_delta": 128
+    "dealer_gamma": -9.6,
+    "net_delta": -150.0
   },
   "prev_metrics": null,
   "history_30d": [
     {
       "date": "2026-11-23",
-      "stress_score": 63,
-      "vix": 30.4,
+      "stress_score": 77,
+      "vix": 30.2,
       "vix_vxv": 0.98,
       "gex": -130.0
     }
@@ -43,7 +43,7 @@
     "total_pc": "auto_cboe_daily",
     "index_pc": "auto_cboe_daily",
     "gex": "auto_squeezemetrics",
-    "dealer_gamma": "estimated_bsm_chain",
-    "net_delta": "estimated_bsm_chain"
+    "dealer_gamma": "estimated_gex_aligned",
+    "net_delta": "estimated_gex_aligned"
   }
 }

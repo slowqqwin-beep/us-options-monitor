@@ -1,1 +1,1 @@
-{"date": "2026-11-23", "stress_score": 63, "metrics": {"vixeq_vix": 1.9, "dspx": 42.3, "nvda": 125.5, "vix": 30.4, "vvix": 138.0, "vix_vxv": 0.98, "vix9d_vix": 1.34, "skew": 138.8, "eq_pc": 0.77, "total_pc": 1.13, "index_pc": 1.27, "gex": -130.0, "dealer_gamma": 10.0, "net_delta": 128}}
+{"date": "2026-11-23", "stress_score": 77, "metrics": {"vixeq_vix": 1.92, "dspx": 42.3, "nvda": 125.5, "vix": 30.2, "vvix": 138.0, "vix_vxv": 0.98, "vix9d_vix": 1.35, "skew": 138.8, "eq_pc": 0.77, "total_pc": 1.13, "index_pc": 1.27, "gex": -130.0, "dealer_gamma": -9.6, "net_delta": -150.0}}
