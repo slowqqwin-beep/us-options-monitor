@@ -1,0 +1,6 @@
+{
+  "_comment": "可选机构校准覆盖：填入数字将覆盖自动估算值；保持 null 则自动推算。",
+  "gex": null,
+  "dealer_gamma": null,
+  "net_delta": null
+}
