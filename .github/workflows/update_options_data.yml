@@ -1,0 +1,25 @@
+name: Update US Options Microstructure Metrics
+on:
+  schedule:
+    - cron: '30 14 * * 1-5'
+    - cron: '35 21 * * 1-5'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fetch-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - run: python scripts/fetch_options_metrics.py --out data/latest_metrics.json --history data/history_log.jsonl --dealer-overrides data/dealer_overrides.json
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/latest_metrics.json data/history_log.jsonl
+          git diff --staged --quiet || (git commit -m "chore(data): update daily snapshot [skip ci]" && git push)
+      - if: success()
+        run: curl -sS "https://purge.jsdelivr.net/gh/${{ github.repository }}@main/data/latest_metrics.json" || true
