@@ -1,24 +1,24 @@
 {
   "schema_version": "2.0",
   "date": "2026-11-23",
-  "as_of": "2026-11-23 06:57 EST",
-  "updated_at_utc": "2026-11-23T11:57:05Z",
-  "stress_score": 76,
+  "as_of": "2026-11-23 20:47 EST",
+  "updated_at_utc": "2026-11-24T01:47:00Z",
+  "stress_score": 48,
   "metrics": {
-    "vixeq_vix": 1.93,
-    "dspx": 42.3,
+    "vixeq_vix": 1.85,
+    "dspx": 41.0,
     "nvda": 125.5,
-    "vix": 30.0,
-    "vvix": 138.0,
-    "vix_vxv": 0.97,
-    "vix9d_vix": 1.36,
-    "skew": 138.8,
+    "vix": 26.6,
+    "vvix": 117.4,
+    "vix_vxv": 1.04,
+    "vix9d_vix": 1.04,
+    "skew": 140.4,
     "eq_pc": 0.77,
     "total_pc": 1.13,
     "index_pc": 1.27,
-    "gex": -130.0,
-    "dealer_gamma": -9.6,
-    "net_delta": -150.0
+    "gex": 117.2,
+    "dealer_gamma": 8.7,
+    "net_delta": 110
   },
   "prev_metrics": {
     "vixeq_vix": 1.61,
@@ -242,10 +242,10 @@
     },
     {
       "date": "2026-11-23",
-      "stress_score": 76,
-      "vix": 30.0,
-      "vix_vxv": 0.97,
-      "gex": -130.0
+      "stress_score": 48,
+      "vix": 26.6,
+      "vix_vxv": 1.04,
+      "gex": 117.2
     }
   ],
   "sources": {
