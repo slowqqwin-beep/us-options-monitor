@@ -1,0 +1,80 @@
+{
+  "as_of": "2026-11-25",
+  "generated_at_utc": "2026-11-25T23:11:15Z",
+  "source": "yfinance",
+  "vix": {
+    "vix": 28.29,
+    "vix3m": 26.29,
+    "ratio": 1.0761,
+    "vix_ma5": 29.12,
+    "vix_peak_10d": 35.89,
+    "light": "green",
+    "panic_top_recovery": true,
+    "right_pool_defensive": true
+  },
+  "hurdle_half_year_pct": 2.08,
+  "hurdle_source": "^IRX/2",
+  "slot_usd": 15333,
+  "pillars": [
+    {
+      "ticker": "SMH",
+      "as_of": "2026-11-25",
+      "close": 422.46,
+      "sma200": 525.65,
+      "vs_sma200_pct": -19.63,
+      "ret126_pct": -29.57,
+      "ret252_pct": 24.96,
+      "momentum_pct": -2.3,
+      "eligible": false
+    },
+    {
+      "ticker": "DXJ",
+      "as_of": "2026-11-25",
+      "close": 56.45,
+      "sma200": 57.0,
+      "vs_sma200_pct": -0.97,
+      "ret126_pct": -0.38,
+      "ret252_pct": 24.0,
+      "momentum_pct": 11.81,
+      "eligible": false
+    },
+    {
+      "ticker": "XLE",
+      "as_of": "2026-11-25",
+      "close": 60.9,
+      "sma200": 59.34,
+      "vs_sma200_pct": 2.62,
+      "ret126_pct": 8.35,
+      "ret252_pct": 40.49,
+      "momentum_pct": 24.42,
+      "eligible": true
+    },
+    {
+      "ticker": "IAU",
+      "as_of": "2026-11-25",
+      "close": 67.16,
+      "sma200": 82.76,
+      "vs_sma200_pct": -18.85,
+      "ret126_pct": -20.61,
+      "ret252_pct": -13.72,
+      "momentum_pct": -17.16,
+      "eligible": false
+    },
+    {
+      "ticker": "PDBC",
+      "as_of": "2026-11-25",
+      "close": 17.45,
+      "sma200": 17.78,
+      "vs_sma200_pct": -1.87,
+      "ret126_pct": -1.52,
+      "ret252_pct": 34.58,
+      "momentum_pct": 16.53,
+      "eligible": false
+    }
+  ],
+  "slots": [
+    "XLE",
+    null,
+    null
+  ]
+}
