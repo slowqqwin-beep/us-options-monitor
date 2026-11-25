@@ -16,10 +16,15 @@ jobs:
           python-version: '3.11'
       - run: pip install -r requirements.txt
       - run: python scripts/fetch_options_metrics.py --out data/latest_metrics.json --history data/history_log.jsonl --dealer-overrides data/dealer_overrides.json
+      - run: python scripts/fetch_dual_pool.py --out data/dual_pool.json --history data/dual_pool_history.jsonl
+        continue-on-error: true
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/latest_metrics.json data/history_log.jsonl
+          git add data/dual_pool.json data/dual_pool_history.jsonl 2>/dev/null || true
           git diff --staged --quiet || (git commit -m "chore(data): update daily snapshot [skip ci]" && git push)
       - if: success()
         run: curl -sS "https://purge.jsdelivr.net/gh/${{ github.repository }}@main/data/latest_metrics.json" || true
+      - if: success()
+        run: curl -sS "https://purge.jsdelivr.net/gh/${{ github.repository }}@main/data/dual_pool.json" || true
