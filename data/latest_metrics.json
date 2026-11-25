@@ -1,10 +1,26 @@
 {
   "schema_version": "2.0",
-  "date": "2026-11-24",
-  "as_of": "2026-11-24 交易日 (抓取于 11-24 18:34 EST)",
-  "updated_at_utc": "2026-11-24T23:34:21Z",
-  "stress_score": 39,
+  "date": "2026-11-25",
+  "as_of": "2026-11-25 交易日 (抓取于 11-25 03:57 EST)",
+  "updated_at_utc": "2026-11-25T08:57:26Z",
+  "stress_score": 40,
   "metrics": {
+    "vixeq_vix": 1.81,
+    "dspx": 42.6,
+    "nvda": 155.4,
+    "vix": 27.7,
+    "vvix": 114.1,
+    "vix_vxv": 1.09,
+    "vix9d_vix": 0.96,
+    "skew": 139.2,
+    "eq_pc": 0.57,
+    "total_pc": 0.95,
+    "index_pc": 1.12,
+    "gex": 14.9,
+    "dealer_gamma": 1.1,
+    "net_delta": 12
+  },
+  "prev_metrics": {
     "vixeq_vix": 1.9,
     "dspx": 42.6,
     "nvda": 155.4,
@@ -13,37 +29,14 @@
     "vix_vxv": 1.04,
     "vix9d_vix": 1.01,
     "skew": 139.2,
-    "eq_pc": 0.55,
-    "total_pc": 0.94,
-    "index_pc": 1.21,
+    "eq_pc": 0.7,
+    "total_pc": 1.05,
+    "index_pc": 1.19,
     "gex": 14.9,
     "dealer_gamma": 1.1,
     "net_delta": 12
   },
-  "prev_metrics": {
-    "vixeq_vix": 1.6,
-    "dspx": 41.0,
-    "nvda": 165.1,
-    "vix": 26.6,
-    "vvix": 117.4,
-    "vix_vxv": 1.04,
-    "vix9d_vix": 1.04,
-    "skew": 140.4,
-    "eq_pc": 0.7,
-    "total_pc": 1.05,
-    "index_pc": 1.2,
-    "gex": 21.6,
-    "dealer_gamma": 1.6,
-    "net_delta": 18
-  },
   "history_30d": [
-    {
-      "date": "2026-10-14",
-      "stress_score": 18,
-      "vix": 16.9,
-      "vix_vxv": 0.9,
-      "gex": 64.8
-    },
     {
       "date": "2026-10-15",
       "stress_score": 17,
@@ -242,9 +235,16 @@
     },
     {
       "date": "2026-11-24",
-      "stress_score": 39,
+      "stress_score": 42,
       "vix": 26.4,
       "vix_vxv": 1.04,
+      "gex": 14.9
+    },
+    {
+      "date": "2026-11-25",
+      "stress_score": 40,
+      "vix": 27.7,
+      "vix_vxv": 1.09,
       "gex": 14.9
     }
   ],
