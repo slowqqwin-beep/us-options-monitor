@@ -20,7 +20,9 @@ Sources: yfinance (Yahoo) daily bars, 2y history.
 
 Fail-stop: any missing price series -> exit non-zero and write nothing.
 No silent fallback prices. The GitHub Actions workflow only commits when
-this script exits 0.
+this script exits 0. A Claude Agent Chinese brief written into the previous
+data file as top-level `summary_cn` is carried over into the regenerated
+file, so the twice-daily rewrite never wipes it.
 """
 import argparse
 import datetime as dt
@@ -176,6 +178,17 @@ def main():
         "pillars": pillars,
         "slots": slots,
     }
+
+    # Preserve a Claude Agent Chinese brief (summary_cn) written into the
+    # previous file: this script rewrites the file twice daily, and a fresh
+    # write must not wipe the brief.
+    try:
+        with open(a.out, encoding="utf-8") as f:
+            prev = json.load(f)
+        if isinstance(prev.get("summary_cn"), str) and prev["summary_cn"].strip():
+            payload["summary_cn"] = prev["summary_cn"]
+    except (OSError, ValueError):
+        pass
 
     with open(a.out, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
