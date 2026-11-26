@@ -2,9 +2,14 @@
 """Fetch dual-pool (US $96k) dashboard data for the Muse dashboard + Muse.
 
 Sources: yfinance (Yahoo) daily bars, 2y history.
-  - VIX light: ^VIX, ^VIX3M (ratio < 1.00 green; also green after a panic
-    top: VIX peaked above 26 in the last 10 sessions and has now fallen
-    back below its 5-day average).
+  - VIX light (three-colour hard rules, no exceptions):
+      RED if VIX/VIX3M > 1.05, or VIX > 25 and today's VIX > yesterday's
+      VIX. YELLOW if 1.00 <= ratio <= 1.05 and today's VIX < yesterday's
+      VIX and today's VIX < its 5-day average. GREEN only if ratio < 1.00.
+      Any case matching none of the three defaults to RED (conservative).
+      The old panic-top-recovery green is removed: a fall from a 10-day
+      peak below the 5-day average no longer grants green while the curve
+      is still inverted.
   - Right pool pillars: SMH, DXJ, XLE, IAU, PDBC. For each: latest close,
     SMA200, 126-day and 252-day returns, momentum score
     (ret126 + ret252) / 2, eligible = above SMA200 (with the checklist's
@@ -26,7 +31,7 @@ import sys
 import yfinance as yf
 
 PILLARS = ["SMH", "DXJ", "XLE", "IAU", "PDBC"]
-SLOT_USD = 15333
+SLOT_USD = 15519  # right pool $46,558 / 3, rounded down
 HURDLE_FALLBACK_PCT = 1.9
 
 
@@ -80,18 +85,30 @@ def main():
             return 1
         series[sym] = s
 
-    # --- VIX light -------------------------------------------------------
+    # --- VIX light: three-colour hard rules ------------------------------
     vix_closes = [v for _, v in series["^VIX"]]
     vix3m_closes = [v for _, v in series["^VIX3M"]]
     vix = vix_closes[-1]
+    vix_prev = vix_closes[-2]
     vix3m = vix3m_closes[-1]
     ratio = vix / vix3m
     vix_ma5 = sma(vix_closes, 5)
-    vix_peak_10d = max(vix_closes[-10:])
-    panic_top_recovery = (
-        vix_peak_10d > 26.0 and vix_ma5 is not None and vix < vix_ma5
-    )
-    light = "green" if (ratio < 1.00 or panic_top_recovery) else "red"
+    if ratio > 1.05 or (vix > 25.0 and vix > vix_prev):
+        light = "red"
+    elif ratio < 1.00:
+        light = "green"
+    elif (
+        1.00 <= ratio <= 1.05
+        and vix < vix_prev
+        and vix_ma5 is not None
+        and vix < vix_ma5
+    ):
+        light = "yellow"
+    else:
+        # Matches none of the three rules (e.g. inverted curve with VIX
+        # rising but <= 25, or falling but still above its 5-day average):
+        # default to red rather than grant an unconfirmed yellow/green.
+        light = "red"
     right_defensive = ratio > 1.02
 
     # --- T-bill hurdle (half-year) ---------------------------------------
@@ -146,12 +163,11 @@ def main():
         "source": "yfinance",
         "vix": {
             "vix": round(vix, 2),
+            "vix_prev": round(vix_prev, 2),
             "vix3m": round(vix3m, 2),
             "ratio": round(ratio, 4),
             "vix_ma5": round(vix_ma5, 2) if vix_ma5 else None,
-            "vix_peak_10d": round(vix_peak_10d, 2),
             "light": light,
-            "panic_top_recovery": bool(panic_top_recovery),
             "right_pool_defensive": bool(right_defensive),
         },
         "hurdle_half_year_pct": round(hurdle, 2),

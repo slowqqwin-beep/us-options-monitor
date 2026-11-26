@@ -7,14 +7,13 @@
     "vix3m": 26.29,
     "ratio": 1.0761,
     "vix_ma5": 29.12,
-    "vix_peak_10d": 35.89,
-    "light": "green",
-    "panic_top_recovery": true,
-    "right_pool_defensive": true
+    "light": "red",
+    "right_pool_defensive": true,
+    "vix_prev": 26.36
   },
   "hurdle_half_year_pct": 2.08,
   "hurdle_source": "^IRX/2",
-  "slot_usd": 15333,
+  "slot_usd": 15519,
   "pillars": [
     {
       "ticker": "SMH",
