@@ -3,13 +3,14 @@
 
 Sources: yfinance (Yahoo) daily bars, 2y history.
   - VIX light (three-colour hard rules, no exceptions):
-      RED if VIX/VIX3M > 1.05, or VIX > 25 and today's VIX > yesterday's
-      VIX. YELLOW if 1.00 <= ratio <= 1.05 and today's VIX < yesterday's
-      VIX and today's VIX < its 5-day average. GREEN only if ratio < 1.00.
-      Any case matching none of the three defaults to RED (conservative).
-      The old panic-top-recovery green is removed: a fall from a 10-day
-      peak below the 5-day average no longer grants green while the curve
-      is still inverted.
+      RED if VIX/VIX3M > 1.05, or ratio >= 1.00 and today's VIX >=
+      yesterday's VIX. YELLOW if 1.00 <= ratio <= 1.05 and today's VIX <
+      yesterday's VIX and today's VIX < its 5-day average. GREEN only if
+      ratio < 1.00. VIX absolute level is recorded for observation only
+      and is never a hard threshold. Any case matching none of the three
+      defaults to RED (conservative). The old panic-top-recovery green
+      is removed: a fall from a 10-day peak below the 5-day average no
+      longer grants green while the curve is still inverted.
   - Right pool pillars: SMH, DXJ, XLE, IAU, PDBC. For each: latest close,
     SMA200, 126-day and 252-day returns, momentum score
     (ret126 + ret252) / 2, eligible = above SMA200 (with the checklist's
@@ -95,7 +96,7 @@ def main():
     vix3m = vix3m_closes[-1]
     ratio = vix / vix3m
     vix_ma5 = sma(vix_closes, 5)
-    if ratio > 1.05 or (vix > 25.0 and vix > vix_prev):
+    if ratio > 1.05 or (ratio >= 1.00 and vix >= vix_prev):
         light = "red"
     elif ratio < 1.00:
         light = "green"
@@ -107,9 +108,9 @@ def main():
     ):
         light = "yellow"
     else:
-        # Matches none of the three rules (e.g. inverted curve with VIX
-        # rising but <= 25, or falling but still above its 5-day average):
-        # default to red rather than grant an unconfirmed yellow/green.
+        # Matches none of the three rules (e.g. ratio 1.00-1.05 with VIX
+        # falling but still above its 5-day average): default to red
+        # rather than grant an unconfirmed yellow/green.
         light = "red"
     right_defensive = ratio > 1.02
 
