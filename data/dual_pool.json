@@ -1,15 +1,15 @@
 {
-  "as_of": "2026-11-25",
-  "generated_at_utc": "2026-11-25T23:11:15Z",
+  "as_of": "2026-11-26",
+  "generated_at_utc": "2026-11-26T08:42:37Z",
   "source": "yfinance",
   "vix": {
-    "vix": 28.29,
+    "vix": 27.09,
+    "vix_prev": 28.29,
     "vix3m": 26.29,
-    "ratio": 1.0761,
-    "vix_ma5": 29.12,
-    "light": "red",
-    "right_pool_defensive": true,
-    "vix_prev": 26.36
+    "ratio": 1.0304,
+    "vix_ma5": 28.85,
+    "light": "yellow",
+    "right_pool_defensive": true
   },
   "hurdle_half_year_pct": 2.08,
   "hurdle_source": "^IRX/2",
