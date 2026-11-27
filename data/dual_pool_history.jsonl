@@ -2,3 +2,4 @@
 {"date": "2026-11-26", "vix": 27.09, "vix3m": 26.29, "ratio": 1.0304, "light": "yellow", "slots": ["XLE", null, null]}
 {"date": "2026-11-26", "vix": 26.8, "vix3m": 26.29, "ratio": 1.0194, "light": "yellow", "slots": ["XLE", null, null]}
 {"date": "2026-11-27", "vix": 24.93, "vix3m": 26.29, "ratio": 0.9483, "light": "green", "slots": ["XLE", null, null]}
+{"date": "2026-11-27", "vix": 23.81, "vix3m": 23.82, "ratio": 0.9996, "light": "green", "slots": ["XLE", "DXJ", null]}
